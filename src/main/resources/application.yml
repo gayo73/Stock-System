@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/stock?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate # 팀 프로젝트에서는 update나 create 대신 DDL을 직접 실행하고 validate로 검증만 하는 것이 안전
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

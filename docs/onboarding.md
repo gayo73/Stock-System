@@ -7,8 +7,8 @@
 
 1. 저장소 clone
    ```bash
-   git clone https://github.com/팀계정/securities-backend.git
-   cd securities-backend/docker
+   git clone https://github.com/gayo73/Stock-System.git
+   cd Stock-System/docker
    ```
 
 2. 환경변수 파일 생성
@@ -45,6 +45,19 @@ docker compose down       # 중지 (데이터 유지)
 docker compose down -v    # 중지 + 데이터 완전 삭제 (스키마 바뀌었을 때)
 docker compose logs -f 서비스명   # 로그 실시간 확인
 ```
+
+## Windows / Git Bash 사용자 참고사항
+
+- `docker exec -it`가 들어간 명령어는 앞에 `winpty`를 붙이세요:
+```bash
+  winpty docker exec -it securities-mysql mysql -u user -p securities_db
+```
+- 컨테이너 안 파일 경로(`/opt/...`)가 들어간 명령어는 Windows 경로로 잘못 변환될 수 있습니다. 이 경우:
+```bash
+  winpty docker exec -it 컨테이너명 sh
+```
+- 컨테이너 안에 먼저 들어간 다음, 그 안에서 명령어를 실행하세요.
+
 
 ## 문제 생기면
 
